@@ -9,7 +9,7 @@ namespace CasinoForms.Controllers
 {
     internal class BlackJackManager
     {
-        PlayerModel GetScore(PlayerModel person)
+        public PlayerModel GetScore(PlayerModel person)
         {
             bool acedUp = false;
             int total = 0;
