@@ -15,5 +15,20 @@ namespace CasinoForms.Models
         public int number;
 
         public int value;
+
+        public CardModel(string suit, int number, int value)
+        {
+            this.suit = suit;
+            this.number = number;
+            this.value = value;
+        }
+        public CardModel(string suit, int number)
+        {
+            this.suit = suit;
+            this.number = number;
+        }
+        public CardModel()
+        {
+        }
     }
 }
