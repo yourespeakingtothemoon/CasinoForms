@@ -22,6 +22,7 @@ namespace CasinoForms.Controllers
             {
                 total += 10;
             }
+            if (total > 21) total = -1;
             person.hand1Value = total;
 
             if (person.splitHand != null)
@@ -37,9 +38,35 @@ namespace CasinoForms.Controllers
                 {
                     total += 10;
                 }
+                if (total > 21) total = -1;
                 person.hand2Value = total;
             }
             return person;
+        }
+
+        public bool isBusted(PlayerModel person)
+        {
+            if (person.hand1Value > 21) return true;
+            return false;
+        }
+
+        public int whoWon(PlayerModel dealer, PlayerModel player)
+        {
+            if (dealer.hand1Value > player.hand1Value && dealer.hand1Value > player.hand2Value ||
+                dealer.hand2Value > player.hand1Value && dealer.hand2Value > player.hand2Value)
+            {
+                return 0;
+            }
+
+            else if (dealer.hand1Value < player.hand1Value && dealer.hand1Value < player.hand2Value ||
+                     dealer.hand2Value < player.hand1Value && dealer.hand2Value < player.hand2Value) 
+            {
+                if (player.hand.Count >= 5) return 3;
+                return 2;
+            }
+
+            return 1;
+
         }
 
     }
