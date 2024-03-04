@@ -10,9 +10,9 @@ namespace CasinoForms.Models
     {
         public int id;
 
-        public string name;
+        public string? name;
 
-        public int? money;
+        public float? money;
 
         public List<CardModel> hand;
 
@@ -23,9 +23,17 @@ namespace CasinoForms.Models
 
         public PlayerModel()
         {
-
+            hand = new List<CardModel>();
         }
-        public PlayerModel(string name, int? money, List<CardModel> hand)
+        public PlayerModel(string name, float? money, List<CardModel> hand)
+        {
+           
+            this.name = name;
+            this.money = money;
+            this.hand = hand;
+        }
+
+        public PlayerModel(int id, string name, float? money, List<CardModel> hand)
         {
             this.id = id;
             this.name = name;

@@ -38,12 +38,12 @@ namespace CasinoForms.Controllers
 
             downDoubled = false;
 
-            player.hand = null;
+            player.hand = new List<CardModel>();
             player.splitHand = null;
             player.hand1Value = 0;
             player.hand2Value = 0;
 
-            dealer.hand = null;
+            dealer.hand = new List<CardModel>();
             dealer.splitHand = null;
             dealer.hand1Value = 0;
             dealer.hand2Value = 0;
@@ -141,26 +141,26 @@ namespace CasinoForms.Controllers
         {
 
             int i = 1;
-            for (; i < 13; i++)
+            for (; i < 14; i++)
             {
                 CardModel card = new CardModel("Hearts", i % 13);
                 deck.Add(card);
             }
-            for (; i < 26; i++)
+            for (; i < 27; i++)
             {
-                CardModel card = new CardModel("Hearts", i % 13);
-                deck.Add(card);
-
-            }
-            for (; i < 39; i++)
-            {
-                CardModel card = new CardModel("Hearts", i % 13);
+                CardModel card = new CardModel("Diamonds", i % 13);
                 deck.Add(card);
 
             }
-            for (; i < 52; i++)
+            for (; i < 40; i++)
             {
-                CardModel card = new CardModel("Hearts", i % 13);
+                CardModel card = new CardModel("Clubs", i % 13);
+                deck.Add(card);
+
+            }
+            for (; i < 53; i++)
+            {
+                CardModel card = new CardModel("Spades", i % 13);
                 deck.Add(card);
 
             }
@@ -196,9 +196,14 @@ namespace CasinoForms.Controllers
             {
                 Random random = new Random();
                 int cardDrawn = random.Next(deck.Count - 1);
-                player.splitHand.Add(deck.ElementAt(cardDrawn));
+                if(player.splitHand!= null) player.splitHand.Add(deck.ElementAt(cardDrawn));
                 deck.RemoveAt(cardDrawn);
             }
+        }
+
+        public List<CardModel> getDeck()
+        {
+            return deck;
         }
     }
 }

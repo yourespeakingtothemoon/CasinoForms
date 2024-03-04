@@ -10,7 +10,7 @@ namespace CasinoForms.Models
     {
         public int id;
 
-        public string suit;
+        public string? suit;
 
         public int number;
 
