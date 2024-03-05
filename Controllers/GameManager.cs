@@ -191,7 +191,6 @@ namespace CasinoForms.Controllers
         }
         public void DrawCardsForSplit(int loops, PlayerModel player)
         {
-            turnCount++;
             for (int i = 0; i < loops; i++)
             {
                 Random random = new Random();
@@ -204,6 +203,15 @@ namespace CasinoForms.Controllers
         public List<CardModel> getDeck()
         {
             return deck;
+        }
+
+        public void getBet(int betAmount)
+        {
+            bet = betAmount;
+        }
+        public void setPlayerName(string name)
+        {
+            player.name = name;
         }
     }
 }
