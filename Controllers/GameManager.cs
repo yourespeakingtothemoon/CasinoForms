@@ -8,21 +8,21 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CasinoForms.Controllers
 {
-    internal class GameManager
+    public class GameManager
     {
         public int turnCount = 0;
 
-        PlayerModel player { get; set; } = new PlayerModel();
-        PlayerModel dealer { get; set; } = new PlayerModel();
+        public PlayerModel player { get; set; } = new PlayerModel();
+        public PlayerModel dealer { get; set; } = new PlayerModel();
 
-        BlackJackManager blackJackManager = new BlackJackManager();
-        PokerManager pokerManager = new PokerManager();
+        public BlackJackManager blackJackManager = new BlackJackManager();
+        public PokerManager pokerManager = new PokerManager();
 
-        public int bet;
+        public int bet =0;
 
         public bool downDoubled = false;
 
-        public int payoutAmount;
+        public int payoutAmount =0;
 
 
         List<CardModel> deck = new List<CardModel>();

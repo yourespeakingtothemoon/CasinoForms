@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CasinoForms.Controllers
 {
-    internal class PokerManager
+    public class PokerManager
     {
     }
 }

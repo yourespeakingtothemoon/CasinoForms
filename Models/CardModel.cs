@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CasinoForms.Models
 {
-    internal class CardModel
+    public class CardModel
     {
         public int id;
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CasinoForms.Controllers
 {
-    internal class BlackJackManager
+    public class BlackJackManager
     {
         public PlayerModel GetScore(PlayerModel person)
         {

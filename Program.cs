@@ -1,5 +1,6 @@
+using CasinoForms.Models;
 using CasinoForms.Testing;
-
+using CasinoForms.Views;
 namespace CasinoForms
 {
     internal static class Program
@@ -13,7 +14,9 @@ namespace CasinoForms
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new CasinoForms.Testing.TestView());
+            //Application.Run(new CasinoForms.Testing.TestView());
+            UserModel user = new UserModel("Test", 1000);
+            Application.Run(new TitleScreen(user));
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CasinoForms.Models
 {
-    internal class UserModel
+    public class UserModel
     {
         public int id;
         public string? name;
@@ -35,6 +35,11 @@ namespace CasinoForms.Models
         {
             bank.inMoney(amount);
             balance -= amount;
+        }
+
+        public string balanceToString()
+        {
+           return "$" + balance.ToString("0.00");
         }
     }
 }

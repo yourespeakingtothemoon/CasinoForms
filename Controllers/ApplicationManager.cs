@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CasinoForms.Controllers
 {
-    internal class ApplicationManager
+    public class ApplicationManager
     {
         List<Form> screens = new List<Form>();
         BankModel bank;
