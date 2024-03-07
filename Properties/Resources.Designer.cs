@@ -933,6 +933,16 @@ namespace CasinoForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Poker_Screen_SideBar {
+            get {
+                object obj = ResourceManager.GetObject("Poker_Screen_SideBar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Roulette {
             get {
                 object obj = ResourceManager.GetObject("Roulette", resourceCulture);

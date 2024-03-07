@@ -287,5 +287,23 @@ namespace CasinoForms.Controllers
         {
             player.name = name;
         }
+
+
+
+
+        public void PokerDraw()
+        {
+            DrawCards(5, dealer);
+            DrawCards(2, player);
+
+        }
+
+        public void StartPoker(PlayerModel player, Blackjack view)
+        {
+           
+            SetDeck();
+            PokerDraw();
+        
+        }
     }
 }

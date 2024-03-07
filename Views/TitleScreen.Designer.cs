@@ -243,12 +243,13 @@ namespace CasinoForms.Views
 
         private void poker_MouseHover(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            pokerbutton.Image = Properties.Resources.Poker_Pressed;
         }
 
         private void poker_MouseLeave(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            pokerbutton.Image = Properties.Resources.Poker;
+          
         }
 
         private void poker_MouseClick(object sender, MouseEventArgs e)
