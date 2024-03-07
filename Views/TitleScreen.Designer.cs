@@ -39,6 +39,8 @@ namespace CasinoForms.Views
      
         void blackjack_MouseClick(object sender, MouseEventArgs e)
         {
+            
+
         }
 
 
@@ -73,12 +75,14 @@ namespace CasinoForms.Views
             // 
             blackjackbutton.BackColor = Color.Transparent;
             blackjackbutton.Image = Properties.Resources.BlackJack;
-            blackjackbutton.Location = new Point(321, 138);
+            blackjackbutton.Location = new Point(367, 184);
+            blackjackbutton.Margin = new Padding(3, 4, 3, 4);
             blackjackbutton.Name = "blackjackbutton";
-            blackjackbutton.Size = new Size(106, 79);
+            blackjackbutton.Size = new Size(121, 105);
             blackjackbutton.SizeMode = PictureBoxSizeMode.Zoom;
             blackjackbutton.TabIndex = 0;
             blackjackbutton.TabStop = false;
+            blackjackbutton.Click += blackjackbutton_Click;
             blackjackbutton.MouseClick += blackjack_MouseClick;
             blackjackbutton.MouseLeave += blackjack_MouseLeave;
             blackjackbutton.MouseHover += blackjack_MouseHover;
@@ -87,12 +91,14 @@ namespace CasinoForms.Views
             // 
             pokerbutton.BackColor = Color.Transparent;
             pokerbutton.Image = Properties.Resources.Poker;
-            pokerbutton.Location = new Point(184, 138);
+            pokerbutton.Location = new Point(210, 184);
+            pokerbutton.Margin = new Padding(3, 4, 3, 4);
             pokerbutton.Name = "pokerbutton";
-            pokerbutton.Size = new Size(106, 79);
+            pokerbutton.Size = new Size(121, 105);
             pokerbutton.SizeMode = PictureBoxSizeMode.Zoom;
             pokerbutton.TabIndex = 1;
             pokerbutton.TabStop = false;
+            pokerbutton.Click += pokerbutton_Click;
             pokerbutton.MouseClick += poker_MouseClick;
             pokerbutton.MouseLeave += poker_MouseLeave;
             pokerbutton.MouseHover += poker_MouseHover;
@@ -101,9 +107,10 @@ namespace CasinoForms.Views
             // 
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = Properties.Resources.Roulette;
-            pictureBox3.Location = new Point(113, 241);
+            pictureBox3.Location = new Point(129, 321);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(106, 79);
+            pictureBox3.Size = new Size(121, 105);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
@@ -112,9 +119,10 @@ namespace CasinoForms.Views
             // 
             pictureBox4.BackColor = Color.Transparent;
             pictureBox4.Image = Properties.Resources.SlotMachine;
-            pictureBox4.Location = new Point(251, 241);
+            pictureBox4.Location = new Point(287, 321);
+            pictureBox4.Margin = new Padding(3, 4, 3, 4);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(106, 79);
+            pictureBox4.Size = new Size(121, 105);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
@@ -123,9 +131,10 @@ namespace CasinoForms.Views
             // 
             pictureBox5.BackColor = Color.Transparent;
             pictureBox5.Image = Properties.Resources.Craps;
-            pictureBox5.Location = new Point(46, 138);
+            pictureBox5.Location = new Point(53, 184);
+            pictureBox5.Margin = new Padding(3, 4, 3, 4);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(106, 79);
+            pictureBox5.Size = new Size(121, 105);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 4;
             pictureBox5.TabStop = false;
@@ -134,9 +143,10 @@ namespace CasinoForms.Views
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = Properties.Resources.CasinoForms;
-            pictureBox6.Location = new Point(-12, -39);
+            pictureBox6.Location = new Point(-14, -52);
+            pictureBox6.Margin = new Padding(3, 4, 3, 4);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(519, 256);
+            pictureBox6.Size = new Size(593, 341);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 5;
             pictureBox6.TabStop = false;
@@ -144,9 +154,10 @@ namespace CasinoForms.Views
             // bankbutton
             // 
             bankbutton.Font = new Font("Comic Sans MS", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            bankbutton.Location = new Point(379, 375);
+            bankbutton.Location = new Point(433, 500);
+            bankbutton.Margin = new Padding(3, 4, 3, 4);
             bankbutton.Name = "bankbutton";
-            bankbutton.Size = new Size(93, 57);
+            bankbutton.Size = new Size(106, 76);
             bankbutton.TabIndex = 6;
             bankbutton.Text = "Bank";
             bankbutton.UseVisualStyleBackColor = true;
@@ -154,9 +165,10 @@ namespace CasinoForms.Views
             // button1
             // 
             button1.Font = new Font("Comic Sans MS", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button1.Location = new Point(12, 375);
+            button1.Location = new Point(14, 500);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(93, 57);
+            button1.Size = new Size(106, 76);
             button1.TabIndex = 7;
             button1.Text = "Exit";
             button1.UseVisualStyleBackColor = true;
@@ -167,9 +179,9 @@ namespace CasinoForms.Views
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Comic Sans MS", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(113, 413);
+            label1.Location = new Point(129, 551);
             label1.Name = "label1";
-            label1.Size = new Size(92, 19);
+            label1.Size = new Size(113, 25);
             label1.TabIndex = 8;
             label1.Text = "Chips Value:";
             // 
@@ -179,9 +191,9 @@ namespace CasinoForms.Views
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Comic Sans MS", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(304, 413);
+            label2.Location = new Point(347, 551);
             label2.Name = "label2";
-            label2.Size = new Size(0, 19);
+            label2.Size = new Size(0, 25);
             label2.TabIndex = 9;
             label2.TextAlign = ContentAlignment.MiddleCenter;
             label2.Click += label2_Click;
@@ -192,18 +204,18 @@ namespace CasinoForms.Views
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Comic Sans MS", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(237, 375);
+            label3.Location = new Point(271, 500);
             label3.Name = "label3";
-            label3.Size = new Size(0, 19);
+            label3.Size = new Size(0, 25);
             label3.TabIndex = 10;
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // TitleScreen
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.ForestGreen;
-            ClientSize = new Size(484, 461);
+            ClientSize = new Size(553, 615);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -215,6 +227,7 @@ namespace CasinoForms.Views
             Controls.Add(pokerbutton);
             Controls.Add(blackjackbutton);
             Controls.Add(pictureBox6);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "TitleScreen";
             Text = "CasinoForms";
             Load += TitleScreen_Load;

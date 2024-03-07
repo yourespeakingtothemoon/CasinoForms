@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CasinoForms.Controllers;
+using CasinoForms.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +14,22 @@ namespace CasinoForms.Views
 {
     public partial class TitleScreen : Form
     {
+        ApplicationManager app = new ApplicationManager();
         public TitleScreen()
         {
+
             InitializeComponent();
         }
+
+
+        public TitleScreen(ApplicationManager a)
+        {
+            this.app = a;
+            InitializeComponent();
+           
+        }
+      
+
 
         private void TitleScreen_Load(object sender, EventArgs e)
         {
@@ -24,6 +38,20 @@ namespace CasinoForms.Views
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void blackjackbutton_Click(object sender, EventArgs e)
+        {
+            Blackjack blackjack = new Blackjack(app);
+            app.AddScreen(blackjack);
+            blackjack.Show();
+            this.Hide();
+
+        }
+
+        private void pokerbutton_Click(object sender, EventArgs e)
         {
 
         }

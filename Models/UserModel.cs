@@ -41,5 +41,10 @@ namespace CasinoForms.Models
         {
            return "$" + balance.ToString("0.00");
         }
+
+        public PlayerModel toPlayer()
+        {
+            return new PlayerModel(name, balance, new List<CardModel>());
+        }
     }
 }

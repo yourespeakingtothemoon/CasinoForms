@@ -11,7 +11,7 @@ namespace CasinoForms.Controllers
     {
         List<Form> screens = new List<Form>();
         BankModel bank;
-        UserModel user;
+       public UserModel user;
 
         public ApplicationManager()
         {

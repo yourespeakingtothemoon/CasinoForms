@@ -1,4 +1,5 @@
 ﻿using CasinoForms.Models;
+using CasinoForms.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,17 +19,24 @@ namespace CasinoForms.Controllers
         public BlackJackManager blackJackManager = new BlackJackManager();
         public PokerManager pokerManager = new PokerManager();
 
+        public Blackjack BlackJackView;
+
         public int bet =0;
 
         public bool downDoubled = false;
 
         public int payoutAmount =0;
 
-
+        public bool roundEnded = false;
         List<CardModel> deck = new List<CardModel>();
 
         public GameManager()
         {
+        }
+        public GameManager(PlayerModel player, Blackjack view)
+        {
+            this.player = player;
+            this.BlackJackView = view;
         }
 
         public void StartBlackJack()
@@ -81,11 +89,23 @@ namespace CasinoForms.Controllers
             if (dealer.hand1Value < 17)
             {
                 DrawCards(1, dealer);
+                BlackJackView.revealDealer = false;
             }
             if (dealer.hand2Value < 17 && dealer.hand != null)
             {
                 DrawCardsForSplit(1, dealer);
             }
+            if(dealer.hand1Value >16)
+            {
+                BlackJackView.revealDealer = true;
+                checkWin();
+            }
+            if(blackJackManager.isBusted(dealer))
+            {
+                payoutAmount = bet * 2;
+                roundEnded = true;
+            }  
+
         }
 
         public void playerTurn(string action)
@@ -110,9 +130,43 @@ namespace CasinoForms.Controllers
                     break;
                 case "Stand":
                     break;
+                case "Surrender":
+                    player.money -= bet / 2;
+                   break;
             }
             checkScore();
+            BlackJackView.revealDealerCard();
+            if(blackJackManager.isBusted(player))
+            {
+                bet = 0;
+              roundEnded = true;
+            }
             DealerTurn();
+        }
+
+        private void checkWin()
+        {
+            checkScore();
+           switch( blackJackManager.whoWon(dealer, player))
+            {
+                case 0:
+                    bet = 0;
+                    roundEnded = true;
+                    break;
+                    case 1:
+                    break;
+                    case 2:
+                    payoutAmount = bet * 2;
+                    bet = 0;
+                    roundEnded = true;
+                    break;
+                    case 3:
+                    payoutAmount = bet * 3;
+                    bet = 0;
+                    roundEnded = true;
+                    break;
+            }
+
         }
 
         private void DoubleDown()
@@ -137,32 +191,52 @@ namespace CasinoForms.Controllers
 
         }
 
+       public void resetBlackjack()
+        {
+            player.hand = new List<CardModel>();
+            player.splitHand = null;
+            player.hand1Value = 0;
+            player.hand2Value = 0;
+
+            dealer.hand = new List<CardModel>();
+            dealer.splitHand = null;
+            dealer.hand1Value = 0;
+            dealer.hand2Value = 0;
+            roundEnded = true;
+
+        }
+
         public void SetDeck()
         {
 
             int i = 1;
+            int val = 1;
             for (; i < 14; i++)
             {
-                CardModel card = new CardModel("Hearts", i % 13);
+                CardModel card = new CardModel("Hearts", val);
                 deck.Add(card);
+                val++;
             }
+            val = 1;
             for (; i < 27; i++)
             {
-                CardModel card = new CardModel("Diamonds", i % 13);
+                CardModel card = new CardModel("Diamonds", val);
                 deck.Add(card);
-
+                val++;
             }
+            val = 1;
             for (; i < 40; i++)
             {
-                CardModel card = new CardModel("Clubs", i % 13);
+                CardModel card = new CardModel("Clubs", val);
                 deck.Add(card);
-
+                val++;
             }
+            val = 1;
             for (; i < 53; i++)
             {
-                CardModel card = new CardModel("Spades", i % 13);
+                CardModel card = new CardModel("Spades", val);
                 deck.Add(card);
-
+                val++;
             }
 
             foreach (var card in deck)
