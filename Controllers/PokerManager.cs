@@ -65,8 +65,30 @@ namespace CasinoForms.Controllers
 
             if (straght(player)) return 25;
 
-
-
+            List<CardModel> tempCards = player.hand;
+            foreach (var card in tempCards)
+            {
+                int FoundFriends = 0;
+                foreach(var card2 in tempCards) 
+                {
+                    if (card.value == card2.value) FoundFriends++;
+                }
+                if (FoundFriends < 2) tempCards.Remove(card);
+            }
+            if (tempCards.Count == 5) return 100;
+            if (tempCards.Count == 3) return 10;
+            if (tempCards.Count == 2) return 1;
+            if (tempCards.Count == 4) 
+            {
+                int goldenValue = tempCards.First().value;
+                bool TwoPair = false;
+                foreach (var card in tempCards)
+                {
+                    if (card.value != goldenValue) TwoPair = true;
+                }
+                if(!TwoPair) return 1000;
+                return 5;
+            }
 
             return 0;
         }
