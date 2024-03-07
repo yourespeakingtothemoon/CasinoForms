@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CasinoForms.Testing;
 
 namespace CasinoForms.Views
 {
@@ -24,11 +25,13 @@ namespace CasinoForms.Views
 
         public TitleScreen(ApplicationManager a)
         {
+
             this.app = a;
+            this.app.titleScreen = this;
             InitializeComponent();
-           
+
         }
-      
+
 
 
         private void TitleScreen_Load(object sender, EventArgs e)
@@ -53,6 +56,18 @@ namespace CasinoForms.Views
 
         private void pokerbutton_Click(object sender, EventArgs e)
         {
+            Poker poker = new Poker(app);
+            app.AddScreen(poker);
+            poker.Show();
+            this.Hide();
+        }
+
+        private void unitTestingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TestView unitTesting = new TestView();
+            app.AddScreen(unitTesting);
+            unitTesting.Show();
+            this.Hide();
 
         }
     }

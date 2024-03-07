@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CasinoForms.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,12 @@ namespace CasinoForms.Views
 {
     public partial class Poker : Form
     {
+        ApplicationManager app = new ApplicationManager();
+        public Poker(ApplicationManager a)
+        {
+            this.app = a;
+            InitializeComponent();
+        }
         public Poker()
         {
             InitializeComponent();
@@ -19,6 +26,13 @@ namespace CasinoForms.Views
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            app.titleScreen.Show();
 
         }
     }

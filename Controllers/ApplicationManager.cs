@@ -1,4 +1,5 @@
 ﻿using CasinoForms.Models;
+using CasinoForms.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace CasinoForms.Controllers
         BankModel bank;
        public UserModel user;
 
+        public TitleScreen titleScreen;
         public ApplicationManager()
         {
             bank = new BankModel();

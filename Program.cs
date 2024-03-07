@@ -1,6 +1,7 @@
 using CasinoForms.Models;
 using CasinoForms.Testing;
 using CasinoForms.Views;
+using CasinoForms.Controllers;
 namespace CasinoForms
 {
     internal static class Program
@@ -16,7 +17,8 @@ namespace CasinoForms
             ApplicationConfiguration.Initialize();
             //Application.Run(new CasinoForms.Testing.TestView());
             UserModel user = new UserModel("Test", 1000);
-            Application.Run(new TitleScreen(user));
+            ApplicationManager app = new ApplicationManager(user);
+            Application.Run(new TitleScreen(app));
         }
     }
 }

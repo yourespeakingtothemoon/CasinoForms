@@ -453,9 +453,11 @@ namespace CasinoForms.Views
         private void button1_Click(object sender, EventArgs e)
         {
             appManager.Payout(gameManager.player);
-            
-            
-            this.Close();
+
+
+            this.Hide();
+            appManager.titleScreen.Show();
+          
 
 
         }

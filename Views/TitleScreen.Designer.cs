@@ -63,12 +63,15 @@ namespace CasinoForms.Views
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            menuStrip1 = new MenuStrip();
+            unitTestingToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)blackjackbutton).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pokerbutton).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // blackjackbutton
@@ -210,6 +213,23 @@ namespace CasinoForms.Views
             label3.TabIndex = 10;
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { unitTestingToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(553, 28);
+            menuStrip1.TabIndex = 11;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // unitTestingToolStripMenuItem
+            // 
+            unitTestingToolStripMenuItem.Name = "unitTestingToolStripMenuItem";
+            unitTestingToolStripMenuItem.Size = new Size(97, 24);
+            unitTestingToolStripMenuItem.Text = "UnitTesting";
+            unitTestingToolStripMenuItem.Click += unitTestingToolStripMenuItem_Click;
+            // 
             // TitleScreen
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -226,7 +246,9 @@ namespace CasinoForms.Views
             Controls.Add(pictureBox3);
             Controls.Add(pokerbutton);
             Controls.Add(blackjackbutton);
+            Controls.Add(menuStrip1);
             Controls.Add(pictureBox6);
+            MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "TitleScreen";
             Text = "CasinoForms";
@@ -237,6 +259,8 @@ namespace CasinoForms.Views
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -254,7 +278,7 @@ namespace CasinoForms.Views
 
         private void poker_MouseClick(object sender, MouseEventArgs e)
         {
-            throw new NotImplementedException();
+    
         }
 
         private void blackjack_MouseLeave(object sender, EventArgs e)
@@ -282,5 +306,7 @@ namespace CasinoForms.Views
         private PictureBox blackjackbutton;
         private PictureBox pokerbutton;
         private Label label3;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem unitTestingToolStripMenuItem;
     }
 }
